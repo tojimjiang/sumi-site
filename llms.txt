@@ -1,0 +1,20 @@
+# Jim Jiang
+
+> An excessively minimalist personal website about a software engineer named Jim Jiang, based in the New York metro region.
+
+Written by Jim Jiang (https://github.com/tojimjiang).
+
+## Posts
+
+- [Fresh New Pages](https://jimjiang.com/blog/fresh-new-pages/): Putting my thoughts into the written word Published October 13, 2026.
+
+## Pages
+
+- [Blog](https://jimjiang.com/blog/): every post, newest first.
+- [Tags](https://jimjiang.com/tags/): personal-website, writing.
+- [About](https://jimjiang.com/about/): about the author and this theme.
+
+## Feeds
+
+- [RSS](https://jimjiang.com/rss.xml)
+- [Sitemap](https://jimjiang.com/sitemap-index.xml)

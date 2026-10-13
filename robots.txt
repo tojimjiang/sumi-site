@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jimjiang.com/sitemap-index.xml

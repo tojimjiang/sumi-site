@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Astro v7.1.6"><script>
+  try {
+    const stored = localStorage.getItem("sumi-theme");
+    if (stored === "light" || stored === "dark") {
+      document.documentElement.dataset.theme = stored;
+    }
+  } catch {}
+</script><title>Tags — Jim Jiang</title><meta name="description" content="Every subject covered on the blog, with the number of posts under each."><link rel="canonical" href="https://jimjiang.com/tags/"><link rel="icon" href="/favicon.ico"><link rel="alternate" type="application/rss+xml" title="Jim Jiang — engineering the ai future" href="https://jimjiang.com/rss.xml"><meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0b0c0e" media="(prefers-color-scheme: dark)"><link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin><meta property="og:type" content="website"><meta property="og:title" content="Tags — Jim Jiang"><meta property="og:description" content="Every subject covered on the blog, with the number of posts under each."><meta property="og:url" content="https://jimjiang.com/tags/"><meta property="og:image" content="https://jimjiang.com/favicon.ico"><meta property="og:site_name" content="Jim Jiang"><meta property="og:locale" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Tags — Jim Jiang"><meta name="twitter:description" content="Every subject covered on the blog, with the number of posts under each."><meta name="twitter:image" content="https://jimjiang.com/favicon.ico"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Jim Jiang","description":"An excessively minimalist personal website about a software engineer named Jim Jiang, based in the New York metro region.","url":"https://jimjiang.com","inLanguage":"en","author":{"@type":"Person","name":"Jim Jiang","url":"https://github.com/tojimjiang"}}</script><style>.page-header[data-astro-cid-b2i3gsw2]{padding-block:var(--space-12) var(--space-8);border-bottom:var(--rule-width) solid var(--color-rule)}.page-header__title[data-astro-cid-b2i3gsw2]{margin-top:var(--space-4);font-size:var(--text-2xl)}.page-header__lede[data-astro-cid-b2i3gsw2]{max-width:var(--width-prose);margin-top:var(--space-6)}
+</style><link rel="stylesheet" href="/_astro/BaseLayout.B7S_BKKW.css"><style>.tag-grid[data-astro-cid-wybof3wm]{margin-top:var(--space-12);grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));padding:0;list-style:none}.tag-cell[data-astro-cid-wybof3wm]{gap:var(--space-2);min-height:9rem;padding:var(--space-6);transition:background var(--duration-fast) var(--ease-out);flex-direction:column;text-decoration:none;display:flex}.tag-cell[data-astro-cid-wybof3wm]:hover{background:var(--color-bg-subtle);color:inherit}.tag-cell__name[data-astro-cid-wybof3wm]{font-size:var(--text-lg);margin-top:auto}.tag-cell[data-astro-cid-wybof3wm]:hover .tag-cell__name[data-astro-cid-wybof3wm]{color:var(--color-accent)}.tag-grid__empty[data-astro-cid-wybof3wm]{margin-top:var(--space-12)}
+</style></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-header" data-astro-cid-nen7h5rs><a class="brand" href="/" data-astro-cid-nen7h5rs><span class="brand__mark" data-astro-cid-nen7h5rs>Jim Jiang</span><span class="brand__sub" data-astro-cid-nen7h5rs>江 — engineering the ai future</span></a><div class="site-header__end" data-astro-cid-nen7h5rs><nav class="nav" aria-label="Primary" data-astro-cid-nen7h5rs><ul class="nav__list" data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="/blog" data-astro-cid-nen7h5rs>Blog</a></li><li data-astro-cid-nen7h5rs><a href="/about/resume" data-astro-cid-nen7h5rs>Resume</a></li><li data-astro-cid-nen7h5rs><a href="/about" data-astro-cid-nen7h5rs>About</a></li></ul></nav><button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark theme" data-astro-cid-l6lhmie6><span class="theme-toggle__icon" aria-hidden="true" data-astro-cid-l6lhmie6></span></button><script>
+  (() => {
+    const root = document.documentElement;
+    const button = document.querySelector("[data-theme-toggle]");
+    if (!button) return;
+
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const resolve = () =>
+      root.dataset.theme || (media.matches ? "dark" : "light");
+
+    const syncLabel = () => {
+      const next = resolve() === "dark" ? "light" : "dark";
+      button.setAttribute("aria-label", `Switch to ${next} theme`);
+    };
+
+    /**
+     * The two `theme-color` metas in BaseHead are keyed on
+     * `prefers-color-scheme`, which only ever tracks the operating system. Once
+     * a theme is pinned they would leave the browser chrome on the other
+     * palette, so replace them with a single unconditional meta.
+     *
+     * The colour is read back off the body rather than hard-coded, so it stays
+     * correct when the palette in tokens.css changes.
+     */
+    const syncThemeColor = () => {
+      if (!root.dataset.theme) return;
+
+      let pinned = document.querySelector('meta[name="theme-color"]:not([media])');
+      if (!pinned) {
+        for (const meta of document.querySelectorAll(
+          'meta[name="theme-color"][media]',
+        )) {
+          meta.remove();
+        }
+        pinned = document.createElement("meta");
+        pinned.setAttribute("name", "theme-color");
+        document.head.appendChild(pinned);
+      }
+
+      pinned.setAttribute(
+        "content",
+        getComputedStyle(document.body).backgroundColor,
+      );
+    };
+
+    button.addEventListener("click", () => {
+      const next = resolve() === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      try {
+        localStorage.setItem("sumi-theme", next);
+      } catch {
+        /* private mode — the choice just won't persist */
+      }
+      syncLabel();
+      syncThemeColor();
+    });
+
+    // Only relevant while the visitor is still following the OS.
+    media.addEventListener("change", syncLabel);
+    syncLabel();
+    // Catches a theme restored from localStorage before first paint.
+    syncThemeColor();
+  })();
+</script></div></header><main id="main"><div class="wrap" data-astro-cid-wybof3wm><header class="page-header" data-astro-cid-b2i3gsw2><p class="eyebrow" data-astro-cid-b2i3gsw2>Index</p><h1 class="page-header__title" data-astro-cid-b2i3gsw2>Tags</h1><p class="lede page-header__lede" data-astro-cid-b2i3gsw2>2 subjects across 1 posts.</p></header><ul class="tag-grid rule-grid" data-astro-cid-wybof3wm><li data-astro-cid-wybof3wm><a class="tag-cell" href="/tags/personal-website/" data-astro-cid-wybof3wm><span class="tag-cell__no label" data-astro-cid-wybof3wm>01</span><span class="tag-cell__name" data-astro-cid-wybof3wm>personal-website</span><span class="tag-cell__count label" data-astro-cid-wybof3wm>1 post</span></a></li><li data-astro-cid-wybof3wm><a class="tag-cell" href="/tags/writing/" data-astro-cid-wybof3wm><span class="tag-cell__no label" data-astro-cid-wybof3wm>02</span><span class="tag-cell__name" data-astro-cid-wybof3wm>writing</span><span class="tag-cell__count label" data-astro-cid-wybof3wm>1 post</span></a></li></ul></div></main><footer class="site-footer" data-astro-cid-jo6i4kqk><div class="wrap site-footer__inner" data-astro-cid-jo6i4kqk><p class="site-footer__mark" data-astro-cid-jo6i4kqk>Jim Jiang<span data-astro-cid-jo6i4kqk> 江</span> — engineering the ai future</p><ul class="site-footer__social" data-astro-cid-jo6i4kqk><li data-astro-cid-jo6i4kqk><a href="https://github.com/tojimjiang" rel="noopener" data-astro-cid-jo6i4kqk>GitHub</a></li><li data-astro-cid-jo6i4kqk><a href="https://www.linkedin.com/in/jim-jiang" rel="noopener" data-astro-cid-jo6i4kqk>LinkedIn</a></li><li data-astro-cid-jo6i4kqk><a href="/rss.xml" data-astro-cid-jo6i4kqk>RSS</a></li></ul><p class="site-footer__legal" data-astro-cid-jo6i4kqk>© 2026 <a href="https://github.com/tojimjiang" data-astro-cid-jo6i4kqk>Jim Jiang</a></p></div></footer></body></html>
