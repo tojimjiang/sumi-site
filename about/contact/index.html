@@ -1,181 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Astro v7.1.6"><script>
+  try {
+    const stored = localStorage.getItem("sumi-theme");
+    if (stored === "light" || stored === "dark") {
+      document.documentElement.dataset.theme = stored;
+    }
+  } catch {}
+</script><title>Contact — Jim Jiang</title><meta name="description" content="Get in touch with Jim Jiang. Contact details are revealed after a brief human verification."><link rel="canonical" href="https://jimjiang.com/about/contact/"><link rel="icon" href="/favicon.ico"><link rel="alternate" type="application/rss+xml" title="Jim Jiang — engineering the ai future" href="https://jimjiang.com/rss.xml"><meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0b0c0e" media="(prefers-color-scheme: dark)"><link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin><meta property="og:type" content="website"><meta property="og:title" content="Contact — Jim Jiang"><meta property="og:description" content="Get in touch with Jim Jiang. Contact details are revealed after a brief human verification."><meta property="og:url" content="https://jimjiang.com/about/contact/"><meta property="og:image" content="https://jimjiang.com/favicon.ico"><meta property="og:site_name" content="Jim Jiang"><meta property="og:locale" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Contact — Jim Jiang"><meta name="twitter:description" content="Get in touch with Jim Jiang. Contact details are revealed after a brief human verification."><meta name="twitter:image" content="https://jimjiang.com/favicon.ico"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Jim Jiang","description":"An excessively minimalist personal website about a software engineer named Jim Jiang, based in the New York metro region.","url":"https://jimjiang.com","inLanguage":"en","author":{"@type":"Person","name":"Jim Jiang","url":"https://github.com/tojimjiang"}}</script><script type="module" src="/_astro/index.astro_astro_type_script_index_0_lang.DJALlb2S.js"></script><script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script><script src="/js/hi.js" defer></script><link rel="stylesheet" href="/_astro/BaseLayout.B7S_BKKW.css"><link rel="stylesheet" href="/_astro/index.Dngf8rDY.css"></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-header" data-astro-cid-nen7h5rs><a class="brand" href="/" data-astro-cid-nen7h5rs><span class="brand__mark" data-astro-cid-nen7h5rs>Jim Jiang</span><span class="brand__sub" data-astro-cid-nen7h5rs>江 — engineering the ai future</span></a><div class="site-header__end" data-astro-cid-nen7h5rs><nav class="nav" aria-label="Primary" data-astro-cid-nen7h5rs><ul class="nav__list" data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="/blog" data-astro-cid-nen7h5rs>Blog</a></li><li data-astro-cid-nen7h5rs><a href="/about/resume" data-astro-cid-nen7h5rs>Resume</a></li><li data-astro-cid-nen7h5rs><a href="/about" aria-current="page" data-astro-cid-nen7h5rs>About</a></li></ul></nav><button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark theme" data-astro-cid-l6lhmie6><span class="theme-toggle__icon" aria-hidden="true" data-astro-cid-l6lhmie6></span></button><script>
+  (() => {
+    const root = document.documentElement;
+    const button = document.querySelector("[data-theme-toggle]");
+    if (!button) return;
 
-<head>
-    
-    <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="chrome=1">
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="referrer" content="no-referrer">
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const resolve = () =>
+      root.dataset.theme || (media.matches ? "dark" : "light");
 
-<meta name="description" content="An excessively minimalist personal website about a software engineer named Jim Jiang, based in the New York metro region.">
-<title>
-    Contact Info - Jim Jiang
-</title>
+    const syncLabel = () => {
+      const next = resolve() === "dark" ? "light" : "dark";
+      button.setAttribute("aria-label", `Switch to ${next} theme`);
+    };
 
+    /**
+     * The two `theme-color` metas in BaseHead are keyed on
+     * `prefers-color-scheme`, which only ever tracks the operating system. Once
+     * a theme is pinned they would leave the browser chrome on the other
+     * palette, so replace them with a single unconditional meta.
+     *
+     * The colour is read back off the body rather than hard-coded, so it stays
+     * correct when the palette in tokens.css changes.
+     */
+    const syncThemeColor = () => {
+      if (!root.dataset.theme) return;
 
-<link rel="shortcut icon" href="/favicon.ico">
+      let pinned = document.querySelector('meta[name="theme-color"]:not([media])');
+      if (!pinned) {
+        for (const meta of document.querySelectorAll(
+          'meta[name="theme-color"][media]',
+        )) {
+          meta.remove();
+        }
+        pinned = document.createElement("meta");
+        pinned.setAttribute("name", "theme-color");
+        document.head.appendChild(pinned);
+      }
 
+      pinned.setAttribute(
+        "content",
+        getComputedStyle(document.body).backgroundColor,
+      );
+    };
 
+    button.addEventListener("click", () => {
+      const next = resolve() === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      try {
+        localStorage.setItem("sumi-theme", next);
+      } catch {
+        /* private mode — the choice just won't persist */
+      }
+      syncLabel();
+      syncThemeColor();
+    });
 
-
-
-
-
-
-<link rel="stylesheet" href="/css/main.min.e3beb083ea6378b8881505b03d22ec39a76a750b624553b20ced09483c89ca90.css" media="screen">
-
-
-
-
-  
-
-
-
-
-
-
-
-<link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;375;400;450;500;550&display=swap">
-<link rel="stylesheet" media="print" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;375;400;450;500;550&display=swap">
-  
-
-
-
-    
-
-    
-    
-    
-    <title>
-        
-        Contact Info
-        
-    </title>
-</head>
-
-<body>
-    
-    
-    <header class="wrap flex-container">
-        <h1>Contact Info</h1>
-    </header>
-    
-    <main class="wrap">
-        
-        <article role="article" class="flex-container">
-<div class="contained">
-    
-    <link rel="stylesheet" href="/css/hi.css">
-
-    <div class="content allcenterer column-flex" >
-        <h1 id="title-header">This page relies on JavaScript to work properly!</h1>
-        <div>
-            
-            <div id="preload"  class="content containedFlex">
-                <p>Does not compute. Does not compute. My buffer is overflowing. My hard drive is scrambling. My fan is overheating.</p>
-                <span class=subtext><p id="preload-desc">But really, JavaScript must be enabled for this page to fully load. Without it this page can not determine your user status.</p></span>
-                <div id="loader-animation" class="sync-pending">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>
-
-            <div class="allcenterer">
-                <div id="captcha-wrap" class="captcha">
-                </div>
-            </div>
-        </div>
-
-        
-        <div>
-            
-
-            <div id="info-div" class="content containedFlex">
-                <a target="_blank" class="project" href="https://github.com/tojimjiang">See My GitHub</a>
-                <a target="_blank" class="project" href="https://www.linkedin.com/in/jim-jiang/">See My Linked
-                    In</a>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-
-<script src="https://www.google.com/recaptcha/api.js?render=6Ld7eqUUAAAAAOxWpaaN_jRYlaLU_X3Ho0N1nH81"></script>
-
-
-<script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
-
-
-
-<script src="/js/hi.js" charset="utf-8"></script>
-</article>
-        
-
-        
-        
-        <nav role="navigation" class="flex-container bottom-menu">
-            
-<hr />
-<p>
-
-
-    
-
-    
-        
-            <a href="/">jim jiang</a>
-        
-    
-    
-        
-            &#183; 
-            <a href="/projects">projects</a>
-        
-            &#183; 
-            <a href="/about">info</a>
-        
-            &#183; 
-            <a href="/about/resume">resume</a>
-        
-    
-
-    
-        
-            &#183; 
-            <a href="https://github.com/tojimjiang">github</a>
-        
-    
-    
-    
-
-</p>
-        </nav>
-        
-        
-    </main>
-    
-    <footer class="flex-container footer">
-</footer>
-    
-    
-
-<div id="site-maintenance-warning" class="site-maintenance-warning" title="This site is no longer maintained." role="note" aria-label="This site is no longer maintained">
-  <span aria-hidden="true">⚠</span><span class="site-maintenance-label">This site is no longer maintained</span>
-</div>
-<style>
-.site-maintenance-warning{position:fixed;right:1rem;bottom:1rem;z-index:9999;display:flex;align-items:center;gap:.45rem;padding:.55rem .7rem;border:1px solid #d6c7a6;border-radius:999px;background:#fffaf0;color:#62512f;font:12px/1.2 system-ui,sans-serif;box-shadow:0 2px 10px #00000012;cursor:help}
-.site-maintenance-warning span[aria-hidden=true]{font-size:15px}
-.site-maintenance-label{display:none}
-.site-maintenance-warning:hover .site-maintenance-label,.site-maintenance-warning:focus .site-maintenance-label{display:inline}
-@media print{.site-maintenance-warning{display:none}}
-</style>
-
-</body>
-
-</html>
+    // Only relevant while the visitor is still following the OS.
+    media.addEventListener("change", syncLabel);
+    syncLabel();
+    // Catches a theme restored from localStorage before first paint.
+    syncThemeColor();
+  })();
+</script></div></header><main id="main"><section class="contact-page wrap" data-astro-cid-qeusyprk><header class="contact-heading" data-astro-cid-qeusyprk><p class="eyebrow" data-astro-cid-qeusyprk>Open channel / 01</p><h1 data-astro-cid-qeusyprk>Contact<span aria-hidden="true" data-astro-cid-qeusyprk>.</span></h1><p class="lede" data-astro-cid-qeusyprk>A direct line, with one small speed bump.</p></header><div class="contact-panel" data-astro-cid-qeusyprk><div class="panel-index" aria-hidden="true" data-astro-cid-qeusyprk>01 <span data-astro-cid-qeusyprk>—</span> HELLO</div><div class="contact-content" data-astro-cid-qeusyprk><h2 id="title-header" data-astro-cid-qeusyprk>This page relies on JavaScript to work properly!</h2><div id="preload" class="preload" data-astro-cid-qeusyprk><p class="glitch-copy" data-astro-cid-qeusyprk>Does not compute. Does not compute. My buffer is overflowing. My hard drive is scrambling. My fan is overheating.</p><p id="preload-desc" class="preload-desc" data-astro-cid-qeusyprk>JavaScript must be enabled for this page to fully load. A quick human check keeps my contact details from being scraped.</p><div id="loader-animation" class="loader" aria-hidden="true" data-astro-cid-qeusyprk><span data-astro-cid-qeusyprk></span><span data-astro-cid-qeusyprk></span><span data-astro-cid-qeusyprk></span><span data-astro-cid-qeusyprk></span></div></div><div class="captcha-wrap" data-astro-cid-qeusyprk><div id="captcha-wrap" class="captcha" data-astro-cid-qeusyprk></div></div><div id="info-div" class="contact-links" aria-live="polite" data-astro-cid-qeusyprk><a class="contact-link" href="https://github.com/tojimjiang" target="_blank" rel="noopener noreferrer" data-astro-cid-qeusyprk>GitHub ↗</a><a class="contact-link" href="https://www.linkedin.com/in/jim-jiang/" target="_blank" rel="noopener noreferrer" data-astro-cid-qeusyprk>LinkedIn ↗</a></div></div></div><p class="contact-footnote" data-astro-cid-qeusyprk><span aria-hidden="true" data-astro-cid-qeusyprk>↳</span> Phone and email appear here once verification succeeds. Or find me on GitHub and LinkedIn in the meantime.</p></section></main><footer class="site-footer" data-astro-cid-jo6i4kqk><div class="wrap site-footer__inner" data-astro-cid-jo6i4kqk><p class="site-footer__mark" data-astro-cid-jo6i4kqk>Jim Jiang<span data-astro-cid-jo6i4kqk> 江</span> — engineering the ai future</p><ul class="site-footer__social" data-astro-cid-jo6i4kqk><li data-astro-cid-jo6i4kqk><a href="https://github.com/tojimjiang" rel="noopener" data-astro-cid-jo6i4kqk>GitHub</a></li><li data-astro-cid-jo6i4kqk><a href="https://www.linkedin.com/in/jim-jiang" rel="noopener" data-astro-cid-jo6i4kqk>LinkedIn</a></li><li data-astro-cid-jo6i4kqk><a href="/rss.xml" data-astro-cid-jo6i4kqk>RSS</a></li></ul><p class="site-footer__legal" data-astro-cid-jo6i4kqk>© 2026 <a href="https://github.com/tojimjiang" data-astro-cid-jo6i4kqk>Jim Jiang</a></p></div></footer></body></html>
