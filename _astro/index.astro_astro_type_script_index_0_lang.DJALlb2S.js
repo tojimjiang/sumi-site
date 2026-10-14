@@ -1,1 +1,0 @@
-import"https://www.google.com/recaptcha/api.js?render=6Ld7eqUUAAAAAOxWpaaN_jRYlaLU_X3Ho0N1nH81";
