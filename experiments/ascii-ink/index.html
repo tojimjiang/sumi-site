@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Astro v7.1.6"><script>
+  try {
+    const stored = localStorage.getItem("sumi-theme");
+    if (stored === "light" || stored === "dark") {
+      document.documentElement.dataset.theme = stored;
+    }
+  } catch {}
+</script><title>ASCII ink study — Jim Jiang</title><meta name="description" content="A private design experiment exploring an ASCII surface over the fluid ink simulation."><link rel="canonical" href="https://jimjiang.com/experiments/ascii-ink/"><link rel="icon" href="/favicon.ico"><meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0b0c0e" media="(prefers-color-scheme: dark)"><link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin><meta property="og:type" content="website"><meta property="og:title" content="ASCII ink study — Jim Jiang"><meta property="og:description" content="A private design experiment exploring an ASCII surface over the fluid ink simulation."><meta property="og:url" content="https://jimjiang.com/experiments/ascii-ink/"><meta property="og:image" content="https://jimjiang.com/favicon.ico"><meta property="og:site_name" content="Jim Jiang"><meta property="og:locale" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ASCII ink study — Jim Jiang"><meta name="twitter:description" content="A private design experiment exploring an ASCII surface over the fluid ink simulation."><meta name="twitter:image" content="https://jimjiang.com/favicon.ico"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Jim Jiang","description":"An excessively minimalist personal website about a software engineer named Jim Jiang, based in the New York metro region.","url":"https://jimjiang.com","inLanguage":"en","author":{"@type":"Person","name":"Jim Jiang","url":"https://github.com/tojimjiang"}}</script><meta name="robots" content="noindex, nofollow"><link rel="stylesheet" href="/_astro/BaseLayout.B7S_BKKW.css"><style>.ink[data-astro-cid-j5ieyzhe]{isolation:isolate;background:var(--ink-canvas-bg);flex-direction:column;display:flex;position:relative;overflow:hidden}.ink--hero[data-astro-cid-j5ieyzhe]{min-height:min(100svh,46rem)}.ink--divider[data-astro-cid-j5ieyzhe]{height:15rem}.ink__fallback[data-astro-cid-j5ieyzhe]{z-index:0;background:radial-gradient(58% 46% at 46% 42%, color-mix(in oklab, var(--ink-pigment) 34%, transparent), transparent 72%), radial-gradient(34% 30% at 66% 62%, color-mix(in oklab, var(--ink-accent) 16%, transparent), transparent 70%), radial-gradient(40% 34% at 28% 66%, color-mix(in oklab, var(--ink-pigment) 18%, transparent), transparent 72%);position:absolute;inset:0}.ink__sim[data-astro-cid-j5ieyzhe]{z-index:1;display:block;position:absolute;inset:0}.ink__content[data-astro-cid-j5ieyzhe]{z-index:2;pointer-events:none;flex-direction:column;flex:1;display:flex;position:relative}.ink__content[data-astro-cid-j5ieyzhe] a,.ink__content[data-astro-cid-j5ieyzhe] button{pointer-events:auto}
+.study-hero[data-astro-cid-gzj4u43r]{justify-content:center;align-items:center;gap:var(--space-6);padding:calc(var(--space-24) + 2rem) var(--gutter) var(--space-16);text-align:center;flex-direction:column;flex:1;display:flex}.study-hero__kicker[data-astro-cid-gzj4u43r]{color:var(--color-accent)}.study-hero[data-astro-cid-gzj4u43r] h1[data-astro-cid-gzj4u43r]{font-family:var(--font-mono);font-size:var(--text-hero);letter-spacing:var(--tracking-hero);text-transform:uppercase;font-weight:600;line-height:.9}.study-hero__lede[data-astro-cid-gzj4u43r]{max-width:32rem;color:var(--color-fg-muted);font-size:var(--text-md)}.study-hero__hint[data-astro-cid-gzj4u43r]{margin-top:var(--space-8);color:var(--color-fg-faint);font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--tracking-label);text-transform:uppercase}.study[data-astro-cid-gzj4u43r]{padding-block:var(--section-y)}.study__intro[data-astro-cid-gzj4u43r]{gap:var(--space-4);max-width:42rem;margin-bottom:var(--space-12);display:grid}.study__intro[data-astro-cid-gzj4u43r] h2[data-astro-cid-gzj4u43r]{font-size:var(--text-2xl)}.study__intro[data-astro-cid-gzj4u43r]>p[data-astro-cid-gzj4u43r]:last-child{color:var(--color-fg-muted)}.controls[data-astro-cid-gzj4u43r]{max-width:48rem;padding-block:var(--space-8);border-top:var(--rule-width) solid var(--color-rule);border-bottom:var(--rule-width) solid var(--color-rule)}.controls__head[data-astro-cid-gzj4u43r]{justify-content:space-between;align-items:baseline;gap:var(--space-4);margin-bottom:var(--space-3);display:flex}.controls__head[data-astro-cid-gzj4u43r] output[data-astro-cid-gzj4u43r]{font-family:var(--font-mono);font-size:var(--text-sm);font-variant-numeric:tabular-nums;color:var(--color-accent)}.controls[data-astro-cid-gzj4u43r] input[data-astro-cid-gzj4u43r][type=range]{width:100%;accent-color:var(--color-accent);cursor:pointer;display:block}.controls__ends[data-astro-cid-gzj4u43r]{justify-content:space-between;gap:var(--space-4);margin-top:var(--space-2);font-size:.625rem;display:flex}.controls__head--cell[data-astro-cid-gzj4u43r]{margin-top:var(--space-8)}.presets[data-astro-cid-gzj4u43r]{gap:var(--space-2);margin-top:var(--space-8);flex-wrap:wrap;display:flex}.presets[data-astro-cid-gzj4u43r] button[data-astro-cid-gzj4u43r]{padding:var(--space-2) var(--space-3);border:var(--rule-width) solid var(--color-rule-strong);border-radius:var(--radius);font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:.04em;transition:border-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out), background var(--duration-fast) var(--ease-out)}.presets[data-astro-cid-gzj4u43r] button[data-astro-cid-gzj4u43r]:hover,.presets[data-astro-cid-gzj4u43r] button[data-astro-cid-gzj4u43r][aria-pressed=true]{border-color:var(--color-accent);color:var(--color-accent)}.presets[data-astro-cid-gzj4u43r] button[data-astro-cid-gzj4u43r][aria-pressed=true]{background:color-mix(in oklab, var(--color-accent) 8%, var(--color-bg))}.controls__note[data-astro-cid-gzj4u43r]{margin-top:var(--space-6);line-height:var(--leading-relaxed)}.study__foot[data-astro-cid-gzj4u43r]{justify-content:space-between;gap:var(--space-4);padding-top:var(--space-6);flex-wrap:wrap;display:flex}.study__foot[data-astro-cid-gzj4u43r] a[data-astro-cid-gzj4u43r]{text-decoration:none}@media (width<=40rem){.study-hero[data-astro-cid-gzj4u43r]{padding-top:calc(var(--space-24) + 1rem)}.study__foot[data-astro-cid-gzj4u43r]{flex-direction:column}}
+</style></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-header" data-astro-cid-nen7h5rs><a class="brand" href="/" data-astro-cid-nen7h5rs><span class="brand__mark" data-astro-cid-nen7h5rs>Jim Jiang</span><span class="brand__sub" data-astro-cid-nen7h5rs>江 — engineering the ai future</span></a><div class="site-header__end" data-astro-cid-nen7h5rs><nav class="nav" aria-label="Primary" data-astro-cid-nen7h5rs><ul class="nav__list" data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="/blog" data-astro-cid-nen7h5rs>Blog</a></li><li data-astro-cid-nen7h5rs><a href="/about/resume" data-astro-cid-nen7h5rs>Resume</a></li><li data-astro-cid-nen7h5rs><a href="/about" data-astro-cid-nen7h5rs>About</a></li></ul></nav><button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark theme" data-astro-cid-l6lhmie6><span class="theme-toggle__icon" aria-hidden="true" data-astro-cid-l6lhmie6></span></button><script>
+  (() => {
+    const root = document.documentElement;
+    const button = document.querySelector("[data-theme-toggle]");
+    if (!button) return;
+
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const resolve = () =>
+      root.dataset.theme || (media.matches ? "dark" : "light");
+
+    const syncLabel = () => {
+      const next = resolve() === "dark" ? "light" : "dark";
+      button.setAttribute("aria-label", `Switch to ${next} theme`);
+    };
+
+    /**
+     * The two `theme-color` metas in BaseHead are keyed on
+     * `prefers-color-scheme`, which only ever tracks the operating system. Once
+     * a theme is pinned they would leave the browser chrome on the other
+     * palette, so replace them with a single unconditional meta.
+     *
+     * The colour is read back off the body rather than hard-coded, so it stays
+     * correct when the palette in tokens.css changes.
+     */
+    const syncThemeColor = () => {
+      if (!root.dataset.theme) return;
+
+      let pinned = document.querySelector('meta[name="theme-color"]:not([media])');
+      if (!pinned) {
+        for (const meta of document.querySelectorAll(
+          'meta[name="theme-color"][media]',
+        )) {
+          meta.remove();
+        }
+        pinned = document.createElement("meta");
+        pinned.setAttribute("name", "theme-color");
+        document.head.appendChild(pinned);
+      }
+
+      pinned.setAttribute(
+        "content",
+        getComputedStyle(document.body).backgroundColor,
+      );
+    };
+
+    button.addEventListener("click", () => {
+      const next = resolve() === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      try {
+        localStorage.setItem("sumi-theme", next);
+      } catch {
+        /* private mode — the choice just won't persist */
+      }
+      syncLabel();
+      syncThemeColor();
+    });
+
+    // Only relevant while the visitor is still following the OS.
+    media.addEventListener("change", syncLabel);
+    syncLabel();
+    // Catches a theme restored from localStorage before first paint.
+    syncThemeColor();
+  })();
+</script></div></header><main id="main"><div class="ink ink--hero" data-astro-cid-j5ieyzhe><div class="ink__fallback" aria-hidden="true" data-astro-cid-j5ieyzhe></div><fluid-ink class="ink__sim" data-strength="1.5" data-auto="1" data-ascii="0.75" aria-hidden="true" data-astro-cid-j5ieyzhe="true"></fluid-ink><div class="ink__content" data-astro-cid-j5ieyzhe><div class="study-hero" data-astro-cid-gzj4u43r><p class="label study-hero__kicker" data-astro-cid-gzj4u43r>Field study / 01</p><h1 data-astro-cid-gzj4u43r>Jim Jiang</h1><p class="study-hero__lede" data-astro-cid-gzj4u43r>engineering the ai future</p><p class="study-hero__hint" data-astro-cid-gzj4u43r>Move your pointer to stir the ink</p></div></div></div><script type="module" src="/_astro/FluidInk.astro_astro_type_script_index_0_lang.CoBT5wVo.js"></script><section class="study wrap" aria-labelledby="study-title" data-astro-cid-gzj4u43r><div class="study__intro" data-astro-cid-gzj4u43r><p class="eyebrow" data-astro-cid-gzj4u43r>The experiment</p><h2 id="study-title" data-astro-cid-gzj4u43r>Same fluid. Different surface.</h2><p data-astro-cid-gzj4u43r>Adjust the character layer over the live simulation. This page is intentionally separate from the homepage, so we can play with the effect without changing the real thing.</p></div><div class="controls" data-astro-cid-gzj4u43r><div class="controls__head" data-astro-cid-gzj4u43r><span class="label" data-astro-cid-gzj4u43r>Display treatment</span><output id="ascii-value" for="ascii" data-astro-cid-gzj4u43r>75%</output></div><input id="ascii" name="ascii" type="range" min="0" max="100" step="5" value="75" aria-label="ASCII intensity" data-astro-cid-gzj4u43r><div class="controls__ends label" data-astro-cid-gzj4u43r><span data-astro-cid-gzj4u43r>Fluid only</span><span data-astro-cid-gzj4u43r>Full characters</span></div><div class="controls__head controls__head--cell" data-astro-cid-gzj4u43r><label class="label" for="cell-size" data-astro-cid-gzj4u43r>Character scale</label><output id="cell-value" for="cell-size" data-astro-cid-gzj4u43r>9 px</output></div><input id="cell-size" name="cell-size" type="range" min="5" max="18" step="1" value="9" aria-label="Character cell size" data-astro-cid-gzj4u43r><div class="controls__ends label" data-astro-cid-gzj4u43r><span data-astro-cid-gzj4u43r>Fine</span><span data-astro-cid-gzj4u43r>Chunky</span></div><div class="presets" aria-label="Quick presets" data-astro-cid-gzj4u43r><button type="button" data-ascii="0" data-astro-cid-gzj4u43r>Original</button><button type="button" data-ascii="35" data-astro-cid-gzj4u43r>Whisper</button><button type="button" data-ascii="75" aria-pressed="true" data-astro-cid-gzj4u43r>Balanced</button><button type="button" data-ascii="100" data-astro-cid-gzj4u43r>Full ASCII</button></div><p class="controls__note label" data-astro-cid-gzj4u43r>Try both themes with the toggle above. The controls affect this study only.</p></div><div class="study__foot" data-astro-cid-gzj4u43r><span class="label" data-astro-cid-gzj4u43r>GPU post-process / WebGL2</span><a href="/" class="label" data-astro-cid-gzj4u43r>Back to the actual homepage ↗</a></div></section><script type="module">var e=document.querySelector(`#ascii`),t=document.querySelector(`#cell-size`),n=document.querySelector(`#ascii-value`),r=document.querySelector(`#cell-value`),i=[...document.querySelectorAll(`[data-ascii]`)],a=[...document.querySelectorAll(`fluid-ink`)];function o(){if(!e||!t)return;let o=Number(e.value),s=Number(t.value);a.forEach(e=>{e.dataset.ascii=String(o/100),e.dataset.cellWidth=String(s),e.dataset.cellHeight=String(Math.round(s*1.65))}),n&&(n.value=`${o}%`),r&&(r.value=`${s} px`),i.forEach(e=>{let t=Number(e.dataset.ascii)===o;e.setAttribute(`aria-pressed`,String(t))})}e?.addEventListener(`input`,o),t?.addEventListener(`input`,o),i.forEach(t=>{t.addEventListener(`click`,()=>{e&&(e.value=t.dataset.ascii??`75`),o()})}),o();</script></main><footer class="site-footer" data-astro-cid-jo6i4kqk><div class="wrap site-footer__inner" data-astro-cid-jo6i4kqk><p class="site-footer__mark" data-astro-cid-jo6i4kqk>Jim Jiang<span data-astro-cid-jo6i4kqk> 江</span> — engineering the ai future</p><ul class="site-footer__social" data-astro-cid-jo6i4kqk><li data-astro-cid-jo6i4kqk><a href="https://github.com/tojimjiang" rel="noopener" data-astro-cid-jo6i4kqk>GitHub</a></li><li data-astro-cid-jo6i4kqk><a href="https://www.linkedin.com/in/jim-jiang" rel="noopener" data-astro-cid-jo6i4kqk>LinkedIn</a></li></ul><p class="site-footer__legal" data-astro-cid-jo6i4kqk>© 2026 <a href="https://github.com/tojimjiang" data-astro-cid-jo6i4kqk>Jim Jiang</a></p></div></footer></body></html>
