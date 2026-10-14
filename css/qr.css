@@ -51,7 +51,7 @@ div.qr-wrapper > .qr-line-wrapper > .qr-cell {
     /* border-radius: 2px 2px 2px 3px; */
 }
 
-div.qr-wrapper > .qr-line-wrapper:nth-of-type(n+11):nth-of-type(-n+17) > .qr-cell:nth-of-type(n+11):nth-of-type(-n+17) {
+div.qr-wrapper > .qr-line-wrapper:nth-of-type(n+11):nth-of-type(-n+19) > .qr-cell:nth-of-type(n+11):nth-of-type(-n+19) {
     background-color: white !important;
 }
 
@@ -64,8 +64,8 @@ div.qr-wrapper > .qr-line-wrapper > .qr-cell.qr-cell-dark {
 }
 
 .qr-logo {
-    width: 10px;
-    height: 10px;
+    width: 16px;
+    height: 16px;
     margin: auto;
     grid-column: 1;
     grid-row: 1;
