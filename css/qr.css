@@ -64,7 +64,8 @@ div.qr-wrapper > .qr-line-wrapper > .qr-cell.qr-cell-dark {
 }
 
 .qr-logo {
-    width: auto;
+    width: 10px;
+    height: 10px;
     margin: auto;
     grid-column: 1;
     grid-row: 1;
