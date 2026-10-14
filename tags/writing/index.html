@@ -1,10 +1,18 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Astro v7.1.6"><script>
+  const root = document.documentElement;
   try {
     const stored = localStorage.getItem("sumi-theme");
-    document.documentElement.dataset.theme =
-      stored === "light" || stored === "dark" ? stored : "dark";
+    if (stored === "light" || stored === "dark") {
+      root.dataset.theme = stored;
+    } else if (typeof window.matchMedia === "function") {
+      root.dataset.theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    } else {
+      root.dataset.theme = "dark";
+    }
   } catch {
-    document.documentElement.dataset.theme = "dark";
+    root.dataset.theme = "dark";
   }
 </script><title>#writing — Jim Jiang</title><meta name="description" content="Posts tagged writing."><link rel="canonical" href="https://jimjiang.com/tags/writing/"><link rel="icon" href="/favicon.ico"><meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0b0c0e" media="(prefers-color-scheme: dark)"><link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin><meta property="og:type" content="website"><meta property="og:title" content="#writing — Jim Jiang"><meta property="og:description" content="Posts tagged writing."><meta property="og:url" content="https://jimjiang.com/tags/writing/"><meta property="og:image" content="https://jimjiang.com/favicon.ico"><meta property="og:site_name" content="Jim Jiang"><meta property="og:locale" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="#writing — Jim Jiang"><meta name="twitter:description" content="Posts tagged writing."><meta name="twitter:image" content="https://jimjiang.com/favicon.ico"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Jim Jiang","description":"An excessively minimalist personal website about a software engineer named Jim Jiang, based in the New York metro region.","url":"https://jimjiang.com","inLanguage":"en","author":{"@type":"Person","name":"Jim Jiang","url":"https://github.com/tojimjiang"}}</script><style>.page-header[data-astro-cid-b2i3gsw2]{padding-block:var(--space-12) var(--space-8);border-bottom:var(--rule-width) solid var(--color-rule)}.page-header__title[data-astro-cid-b2i3gsw2]{margin-top:var(--space-4);font-size:var(--text-2xl)}.page-header__lede[data-astro-cid-b2i3gsw2]{max-width:var(--width-prose);margin-top:var(--space-6)}
 .pagination[data-astro-cid-ohknivtf]{justify-content:space-between;align-items:center;gap:var(--space-4);margin-top:var(--space-12);padding-top:var(--space-6);font-family:var(--font-mono);font-size:var(--text-sm);letter-spacing:var(--tracking-label);text-transform:uppercase;display:flex}.pagination__step[data-astro-cid-ohknivtf]{padding:var(--space-3) var(--space-4);border:var(--rule-width) solid var(--color-rule);border-radius:var(--radius);transition:border-color var(--duration-fast) var(--ease-out);text-decoration:none}.pagination__step[data-astro-cid-ohknivtf]:hover{border-color:var(--color-accent)}.pagination__step--off[data-astro-cid-ohknivtf]{color:var(--color-fg-faint);border-color:#0000}.pagination__count[data-astro-cid-ohknivtf]{color:var(--color-fg-faint)}
