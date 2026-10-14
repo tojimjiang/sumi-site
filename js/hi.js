@@ -19,15 +19,13 @@ function load(object) {
 	// Phone
 	let phone = document.createElement('a');
 	phone.textContent=`Call me at ${object.phone}`;
-	phone.target = '_blank';
-	phone.classList = 'project';
+		phone.classList.add('project', 'contact-link');
 	phone.href=`tel:+1${object.phone.replace(/\(|\)/gm, '-')}`;
 	document.getElementById('info-div').appendChild(phone);
 	// Email
 	let email = document.createElement('a');
 	email.textContent=`Email me at ${object.email}`;
-	email.target = '_blank';
-	email.classList = 'project';
+		email.classList.add('project', 'contact-link');
 	email.href=`mailto:${object.email}`;
 	document.getElementById('info-div').appendChild(email);
 	// Show to user
