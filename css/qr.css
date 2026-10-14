@@ -1,5 +1,5 @@
 :root {
-    --qr-code-scale: 0.9;
+    --qr-code-scale: 0.72;
 }
 
 div div div.qr-pretty-wrapper {
@@ -29,7 +29,8 @@ div div div.qr-wrapper {
     /* height: 72px !important; */
     display: flex;
     flex-wrap: wrap;
-    padding: 4px;
+    padding: 7px;
+    background-color: #fff !important;
     border-radius: 4px;
     grid-column: 1;
     grid-row: 1;
@@ -51,23 +52,12 @@ div.qr-wrapper > .qr-line-wrapper > .qr-cell {
     /* border-radius: 2px 2px 2px 3px; */
 }
 
-div.qr-wrapper > .qr-line-wrapper:nth-of-type(n+11):nth-of-type(-n+17) > .qr-cell:nth-of-type(n+11):nth-of-type(-n+17) {
-    background-color: white !important;
-}
-
 div.qr-wrapper > .qr-line-wrapper > .qr-cell.qr-cell-light {
     background-color: white;
 }
 
 div.qr-wrapper > .qr-line-wrapper > .qr-cell.qr-cell-dark {
     background-color: #30353b;
-}
-
-.qr-logo {
-    width: auto;
-    margin: auto;
-    grid-column: 1;
-    grid-row: 1;
 }
 
 a.qr-href {
