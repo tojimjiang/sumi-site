@@ -78,7 +78,13 @@ a.qr-href {
 
 @media print {
     div div div.qr-wrapper {
-        /* Size differs between print and screen */
-        width: calc(var(--qr-code-scale) * 54px) !important;
+        /* Preserve enough width for all 29 modules plus the white quiet zone. */
+        width: calc(var(--qr-code-scale) * 62px + 6px) !important;
+        max-width: none;
+    }
+
+    div div div.qr-pretty-wrapper {
+        overflow: visible;
+        margin-right: 0;
     }
 }
