@@ -1,4 +1,4 @@
-# Jim Jiang / Tech
+# Jim Jiang
 
 > Jim Jiang builds AI systems, autonomous agents, and automation infrastructure. He's interested in giving machines the ability to reason, make decisions, and take action safely at scale. Models will hallucinate, agents will find loopholes and backdoors. Jim is now working to hold back the next Jurassic Park.
 
