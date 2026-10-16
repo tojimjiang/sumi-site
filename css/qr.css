@@ -1,7 +1,7 @@
 :root {
     --qr-code-scale: 0.9;
     --qr-cell-size: 2px;
-    --qr-cell-count-width: 31;
+    --qr-cell-count-width: 31.5;
 }
 
 div div div.qr-pretty-wrapper {
@@ -26,19 +26,22 @@ div div div.qr-pretty-wrapper {
 div div div.qr-wrapper {
     max-height: 100%;
     width: calc(var(--qr-code-scale) * var(--qr-cell-count-width) * var(--qr-cell-size)) !important;
-    /* height: 72px !important; */
+    height: calc(var(--qr-code-scale) * var(--qr-cell-count-width) * var(--qr-cell-size)) !important;
     display: flex;
     flex-wrap: wrap;
     /* margin: auto; */
-    border: calc(var(--qr-cell-size) * var(--qr-code-scale) * 1.5)solid #fff;
+    border: calc(var(--qr-cell-size) * var(--qr-code-scale) * 1.5) solid #fff;
     border-radius: 0;
     box-sizing: border-box;
     grid-column: 1;
     grid-row: 1;
+    align-content: center;
+    justify-content: center;
 }
 
 div div div.qr-grid-wrapper {
     display: grid;
+    height: fit-content;
 }
 
 div.qr-wrapper > .qr-line-wrapper {
@@ -81,12 +84,22 @@ a.qr-href {
 @media print {
     div div div.qr-wrapper {
         /* Preserve enough width for all 29 modules plus the white quiet zone. */
-        width: calc(var(--qr-code-scale) * 62px + 6px) !important;
+        width: calc(var(--qr-code-scale) * var(--qr-cell-count-width) * var(--qr-cell-size)) !important;
+        height: calc(var(--qr-code-scale) * var(--qr-cell-count-width) * var(--qr-cell-size)) !important;
         max-width: none;
+    }
+
+    div.qr-wrapper > .qr-line-wrapper > .qr-cell.qr-cell-light {
+        background-color: #fff;
+    }
+    
+    div.qr-wrapper>.qr-line-wrapper>.qr-cell.qr-cell-dark {
+        background-color: #000;
     }
 
     div div div.qr-pretty-wrapper {
         overflow: visible;
         margin-right: 0;
+        background-color: #fff !important;
     }
 }
