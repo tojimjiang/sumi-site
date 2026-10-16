@@ -26,7 +26,7 @@ div div div.qr-pretty-wrapper {
 
 div div div.qr-wrapper {
     max-height: 100%;
-    width: max-content !important;
+    width: calc(var(--qr-code-scale) * var(--qr-cell-count-width) * var(--qr-cell-size)) !important;
     /* height: 72px !important; */
     display: flex;
     flex-wrap: wrap;
@@ -104,8 +104,9 @@ a.qr-href {
     }
 
     div.qr-wrapper > .qr-line-wrapper {
+        width: max-content !important;
         height: 2px !important;
-        flex: 0 0 2px;
+        flex: 0 0 max-content;
     }
 
     div.qr-wrapper > .qr-line-wrapper > .qr-cell {
