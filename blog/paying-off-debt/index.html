@@ -1,0 +1,99 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="generator" content="Astro v7.1.6">  <script>
+  const root = document.documentElement;
+  try {
+    const stored = localStorage.getItem("sumi-theme");
+    if (stored === "light" || stored === "dark") {
+      root.dataset.theme = stored;
+    } else if (typeof window.matchMedia === "function") {
+      root.dataset.theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    } else {
+      root.dataset.theme = "dark";
+    }
+  } catch {
+    root.dataset.theme = "dark";
+  }
+</script> <title>Paying Off [Some Tech] Debt / Jim Jiang</title> <meta name="description" content="A long time coming after moving a third time"> <link rel="canonical" href="https://jimjiang.com/blog/paying-off-debt/"> <link rel="icon" href="/favicon.svg" type="image/svg+xml"> <meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)"> <meta name="theme-color" content="#0b0c0e" media="(prefers-color-scheme: dark)"> <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin> <link rel="preload" href="/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin> <meta property="og:type" content="article"> <meta property="og:title" content="Paying Off [Some Tech] Debt / Jim Jiang"> <meta property="og:description" content="A long time coming after moving a third time"> <meta property="og:url" content="https://jimjiang.com/blog/paying-off-debt/"> <meta property="og:image" content="https://jimjiang.com/og/paying-off-debt.png"> <meta property="og:site_name" content="Jim Jiang"> <meta property="og:locale" content="en_US">  <meta property="article:published_time" content="2026-10-14T00:00:00.000Z">  <meta property="article:author" content="Jim Jiang"> <meta property="article:tag" content="writing"><meta property="article:tag" content="personal-website"><meta property="article:tag" content="github">  <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:title" content="Paying Off [Some Tech] Debt / Jim Jiang"> <meta name="twitter:description" content="A long time coming after moving a third time"> <meta name="twitter:image" content="https://jimjiang.com/og/paying-off-debt.png"> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Paying Off [Some Tech] Debt / Jim Jiang","description":"A long time coming after moving a third time","url":"https://jimjiang.com/blog/paying-off-debt/","image":"https://jimjiang.com/og/paying-off-debt.png","datePublished":"2026-10-14T00:00:00.000Z","dateModified":"2026-10-14T00:00:00.000Z","keywords":"writing, personal-website, github","inLanguage":"en","author":{"@type":"Person","name":"Jim Jiang","url":"https://github.com/tojimjiang"},"publisher":{"@type":"Person","name":"Jim Jiang","url":"https://github.com/tojimjiang"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://jimjiang.com/blog/paying-off-debt/"}}</script><style>.prose{font-size:var(--text-md);line-height:var(--leading-relaxed)}.prose>*+*{margin-top:var(--space-6)}.prose h2,.prose h3,.prose h4{margin-top:var(--space-16);margin-bottom:calc(var(--space-6) * -1 + var(--space-4));scroll-margin-top:var(--space-8)}.prose h2{padding-top:var(--space-6);border-top:var(--rule-width) solid var(--color-rule);font-size:var(--text-xl)}.prose h3{font-size:1.25rem}.prose h4{font-size:1.0625rem;font-weight:600}.prose a{text-decoration:underline;text-decoration-color:var(--color-accent);text-underline-offset:.2em}.prose strong{font-weight:600}.prose em{font-style:italic}.prose abbr{text-decoration:underline dotted}.prose ul,.prose ol{padding-left:var(--space-6)}.prose li+li{margin-top:var(--space-3)}.prose li::marker{color:var(--color-fg-faint)}.prose blockquote{padding-left:var(--space-6);border-left:2px solid var(--color-accent);font-size:var(--text-lg);line-height:var(--leading-normal);color:var(--color-fg-muted);font-style:italic}.prose blockquote p+p{margin-top:var(--space-4)}.prose code{font-family:var(--font-mono);font-size:.875em}.prose :not(pre)>code{background:var(--color-bg-subtle);border:var(--rule-width) solid var(--color-rule);border-radius:var(--radius);word-break:break-word;padding:.15em .4em}.prose pre{padding:var(--space-6);background:var(--color-bg-subtle);border:var(--rule-width) solid var(--color-rule);border-radius:var(--radius);font-size:var(--text-sm);line-height:var(--leading-snug);tab-size:2;overflow-x:auto}.prose pre code{font-size:inherit}.prose pre,.prose pre span{color:var(--shiki-light)}:root[data-theme=dark] .prose pre,:root[data-theme=dark] .prose pre span{color:var(--shiki-dark)}@media (prefers-color-scheme:dark){:root:not([data-theme]) .prose pre,:root:not([data-theme]) .prose pre span{color:var(--shiki-dark)}}.prose .table-scroll{overflow-x:auto}.prose table{border-collapse:collapse;width:100%;font-size:var(--text-sm)}.prose th,.prose td{padding:var(--space-3) var(--space-4);text-align:left;border-bottom:var(--rule-width) solid var(--color-rule)}.prose th{font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--color-fg-faint);border-bottom-color:var(--color-rule-strong);font-weight:400}.prose img{border-radius:var(--radius);width:100%}.prose figcaption{margin-top:var(--space-3);font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:.04em;color:var(--color-fg-faint)}.prose hr{margin-block:var(--space-12)}.prose .label{font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--tracking-label);color:var(--color-fg-faint)}
+.post-nav[data-astro-cid-hgp7mnje]{gap:var(--rule-width);margin-top:var(--space-16);background:var(--color-rule);border-block:var(--rule-width) solid var(--color-rule);grid-template-columns:1fr 1fr;display:grid}.post-nav__link[data-astro-cid-hgp7mnje]{gap:var(--space-3);padding:var(--space-8) var(--space-6);background:var(--color-bg);transition:background var(--duration-fast) var(--ease-out);flex-direction:column;text-decoration:none;display:flex}.post-nav__link[data-astro-cid-hgp7mnje]:hover{background:var(--color-bg-subtle);color:inherit}.post-nav__link--next[data-astro-cid-hgp7mnje]{text-align:right}.post-nav__title[data-astro-cid-hgp7mnje]{font-size:var(--text-base);line-height:var(--leading-snug)}.post-nav__link[data-astro-cid-hgp7mnje]:hover .post-nav__title[data-astro-cid-hgp7mnje]{color:var(--color-accent)}.post-nav[data-astro-cid-hgp7mnje]>span[data-astro-cid-hgp7mnje]{background:var(--color-bg)}@media (width<=40rem){.post-nav[data-astro-cid-hgp7mnje]{grid-template-columns:1fr}.post-nav__link--next[data-astro-cid-hgp7mnje]{text-align:left}.post-nav[data-astro-cid-hgp7mnje]>span[data-astro-cid-hgp7mnje]{display:none}}.toc[data-astro-cid-p33bl5ka]{top:var(--space-8);position:sticky}.toc__heading[data-astro-cid-p33bl5ka]{padding-bottom:var(--space-3);border-bottom:var(--rule-width) solid var(--color-rule)}.toc__list[data-astro-cid-p33bl5ka]{margin:var(--space-4) 0 0;font-size:var(--text-sm);line-height:var(--leading-snug);padding:0;list-style:none}.toc__item[data-astro-cid-p33bl5ka]+.toc__item[data-astro-cid-p33bl5ka]{margin-top:var(--space-3)}.toc__item[data-astro-cid-p33bl5ka][data-depth="3"]{padding-left:var(--space-4)}.toc[data-astro-cid-p33bl5ka] a[data-astro-cid-p33bl5ka]{color:var(--color-fg-muted);text-decoration:none}.toc[data-astro-cid-p33bl5ka] a[data-astro-cid-p33bl5ka]:hover{color:var(--color-accent)}@media (width<=60rem){.toc[data-astro-cid-p33bl5ka]{padding-bottom:var(--space-8);border-bottom:var(--rule-width) solid var(--color-rule);position:static}.toc__list[data-astro-cid-p33bl5ka]{columns:2;column-gap:var(--space-8)}}@media (width<=34rem){.toc__list[data-astro-cid-p33bl5ka]{columns:1}}.post__header[data-astro-cid-ssdmjifj]{max-width:var(--width-prose);padding-block:var(--space-12) var(--space-8)}.post__title[data-astro-cid-ssdmjifj]{margin-top:var(--space-4);font-size:var(--text-2xl)}.post__lede[data-astro-cid-ssdmjifj]{margin-top:var(--space-6)}.post__meta[data-astro-cid-ssdmjifj]{gap:var(--space-4);margin-top:var(--space-8);text-transform:none;flex-wrap:wrap;display:flex}.post__meta[data-astro-cid-ssdmjifj] span[data-astro-cid-ssdmjifj]{text-transform:uppercase}.post__tag[data-astro-cid-ssdmjifj]{text-decoration:none}.post__tag[data-astro-cid-ssdmjifj]:hover{color:var(--color-accent)}.post__hero[data-astro-cid-ssdmjifj]{margin-bottom:var(--space-12)}.post__grid[data-astro-cid-ssdmjifj]{grid-template-columns:minmax(0, var(--width-prose)) 13rem;gap:clamp(var(--space-8), 6vw, var(--space-16));padding-top:var(--space-8);border-top:var(--rule-width) solid var(--color-rule);justify-content:center;align-items:start;display:grid}.post__aside[data-astro-cid-ssdmjifj]{grid-area:1/2}.post__body[data-astro-cid-ssdmjifj]{grid-area:1/1}@media (width<=60rem){.post__grid[data-astro-cid-ssdmjifj]{gap:var(--space-8);grid-template-columns:minmax(0,1fr)}.post__aside[data-astro-cid-ssdmjifj],.post__body[data-astro-cid-ssdmjifj]{grid-area:auto}}
+</style><link rel="stylesheet" href="/_astro/BaseLayout.DwStfr10.css"></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header" data-astro-cid-nen7h5rs> <a class="brand" href="/" data-astro-cid-nen7h5rs> <span class="brand__mark" data-astro-cid-nen7h5rs>Jim Jiang</span> <span class="brand__sub" data-astro-cid-nen7h5rs>江 — tech / engineering the ai future</span> </a> <div class="site-header__end" data-astro-cid-nen7h5rs> <nav class="nav" aria-label="Primary" data-astro-cid-nen7h5rs> <ul class="nav__list" data-astro-cid-nen7h5rs> <li data-astro-cid-nen7h5rs> <a href="/blog" aria-current="page" data-astro-cid-nen7h5rs> Blog </a> </li><li data-astro-cid-nen7h5rs> <a href="/projects" data-astro-cid-nen7h5rs> The Lab </a> </li><li data-astro-cid-nen7h5rs> <a href="/about" data-astro-cid-nen7h5rs> About </a> </li><li data-astro-cid-nen7h5rs> <a href="/about/resume" data-astro-cid-nen7h5rs> Resume </a> </li> </ul> </nav> <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark theme" data-astro-cid-l6lhmie6> <span class="theme-toggle__icon" aria-hidden="true" data-astro-cid-l6lhmie6></span> </button> <script>
+  (() => {
+    const root = document.documentElement;
+    const button = document.querySelector("[data-theme-toggle]");
+    if (!button) return;
+
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const resolve = () =>
+      root.dataset.theme || (media.matches ? "dark" : "light");
+
+    const syncLabel = () => {
+      const next = resolve() === "dark" ? "light" : "dark";
+      button.setAttribute("aria-label", `Switch to ${next} theme`);
+    };
+
+    /**
+     * The two `theme-color` metas in BaseHead are keyed on
+     * `prefers-color-scheme`, which only ever tracks the operating system. Once
+     * a theme is pinned they would leave the browser chrome on the other
+     * palette, so replace them with a single unconditional meta.
+     *
+     * The colour is read back off the body rather than hard-coded, so it stays
+     * correct when the palette in tokens.css changes.
+     */
+    const syncThemeColor = () => {
+      if (!root.dataset.theme) return;
+
+      let pinned = document.querySelector('meta[name="theme-color"]:not([media])');
+      if (!pinned) {
+        for (const meta of document.querySelectorAll(
+          'meta[name="theme-color"][media]',
+        )) {
+          meta.remove();
+        }
+        pinned = document.createElement("meta");
+        pinned.setAttribute("name", "theme-color");
+        document.head.appendChild(pinned);
+      }
+
+      pinned.setAttribute(
+        "content",
+        getComputedStyle(document.body).backgroundColor,
+      );
+    };
+
+    button.addEventListener("click", () => {
+      const next = resolve() === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      try {
+        localStorage.setItem("sumi-theme", next);
+      } catch {
+        /* private mode — the choice just won't persist */
+      }
+      syncLabel();
+      syncThemeColor();
+    });
+
+    // Only relevant while the visitor is still following the OS.
+    media.addEventListener("change", syncLabel);
+    syncLabel();
+    // Catches a theme restored from localStorage before first paint.
+    syncThemeColor();
+  })();
+</script> </div> </header> <main id="main">  <article class="post wrap" data-astro-cid-ssdmjifj> <header class="post__header" data-astro-cid-ssdmjifj> <p class="post__stamp eyebrow" data-astro-cid-ssdmjifj> <time datetime="2026-10-14T00:00:00.000Z" data-astro-cid-ssdmjifj>October 14, 2026</time>  </p> <h1 class="post__title" data-astro-cid-ssdmjifj>Paying Off [Some Tech] Debt</h1> <p class="lede post__lede" data-astro-cid-ssdmjifj>A long time coming after moving a third time</p> <p class="post__meta label" data-astro-cid-ssdmjifj> <a class="post__tag" href="/tags/writing/" data-astro-cid-ssdmjifj>
+#writing </a><a class="post__tag" href="/tags/personal-website/" data-astro-cid-ssdmjifj>
+#personal-website </a><a class="post__tag" href="/tags/github/" data-astro-cid-ssdmjifj>
+#github </a> <span data-astro-cid-ssdmjifj>3 min read</span> </p> </header>  <div class="post__grid" data-astro-cid-ssdmjifj> <aside class="post__aside" data-astro-cid-ssdmjifj>  </aside> <div class="prose post__body" data-astro-cid-ssdmjifj>  <p>This is actually the third iteration of my personal site. The very first one deployed here to <a href="jimjiang.com">jimjiang.com</a> was actually literally a college assignment just to get something deployed to the wider web on a static bucket. At the time, it happened to just be deployed to GitHub Pages. Back then it was a mix of Jekyll and just ahnd written html/css for some fun stuff.</p>
+<p>Obviously, a college portfolio site is not meant to scale or be used. It lacks all the QoL for something for any static site these days. And your boy definitely no longer has the time to hand-write CSS/JS/HTML anymore. Could have just moved at that time to something boring like Squarespace or any other of the myriad of website builder vendors. But that felt like an attack on my soul. And even WordPress as a CMS felt excessive for a static site. And don’t even get me started about PHP.</p>
+<h1 id="the-first-migration">The first migration</h1>
+<p>The <a href="sam.jimjiang.com">prior version of this website</a> actually lasted for a good 5 years. It was also served from a static site generator, Hugo. Back in 2021 hugo was the flavor of the month, and it actually let me port in a lot of my “edits” or “customizations”. So it let me use a static site generator to actually maintain the content layout from just JSON/MD content files.</p>
+<p>It actually ran well, and all that process needed was just to build the static files and commit that to a GitHub repo and let that just serve via GitHub Pages.</p>
+<p>It was a super minimal website ux design at the time, just to put my voice front and center. But now that minimalism is a bundle of debt. Not a fault of Hugo, but the cost to move to a new theme or template to have something more expressive.</p>
+<p>Hugo walked so that this website can now fly.</p>
+<h1 id="to-the-stars-with-astro">To the stars with Astro</h1>
+<p>Now in late 2026, Astro is the flavor of the month as the MD/JSON to static site generator. The lift was not entirely painless. But for someone in code every day, it was just a fun side project. But also unlocks (or adds mountains of) access to JS packages via npm.</p>
+<p>I was never a Go developer, not even Kotlin or Java. My preference is actually JavaScript/TypeScript + Python + C++. So moving “back” to the JS ecosystem for my personal website was a small itch I had.</p>
+<p>But with agentic tools like ChatGPT and Claude, it made the bulk migration much less painful. With the grunt work fed to AI models to do the sheer pivot of content, which was already MD/JSON based. But just needed me to actually spend much less debugging time but a lot more crafting time. That long tail of time can be a dread or slog but for me here was an enjoyable experience to just fix all the tiny nits where my content hit a wall with the template’s baked-in CSS and layouts.</p>
+<h1 id="more-to-come">More to come</h1>
+<p>Just moving to an ecosystem that I am more closely in tune with didn’t just reinvigorate a spark. It also lets me make bigger bets with AI and lets me being able to tell when AI has gone off the rails. It’s a chip of debt off my mind, and now we have a brand new site!</p>
+  </div> </div> <nav class="post-nav" aria-label="More posts" data-astro-cid-hgp7mnje> <a class="post-nav__link" href="/blog/fresh-new-pages/" rel="prev" data-astro-cid-hgp7mnje> <span class="post-nav__label label" data-astro-cid-hgp7mnje>← Previous</span> <span class="post-nav__title" data-astro-cid-hgp7mnje>Fresh New Pages</span> </a> <a class="post-nav__link post-nav__link--next" href="/blog/the-first-unlock-after-astro/" rel="next" data-astro-cid-hgp7mnje> <span class="post-nav__label label" data-astro-cid-hgp7mnje>Next →</span> <span class="post-nav__title" data-astro-cid-hgp7mnje>The First Unlock after Astro</span> </a> </nav> </article>  </main> <footer class="site-footer" data-astro-cid-jo6i4kqk> <div class="wrap site-footer__inner" data-astro-cid-jo6i4kqk> <p class="site-footer__mark" data-astro-cid-jo6i4kqk> Jim Jiang<span data-astro-cid-jo6i4kqk> 江</span> — tech / engineering the ai future </p> <ul class="site-footer__social" data-astro-cid-jo6i4kqk> <li data-astro-cid-jo6i4kqk> <a href="https://github.com/tojimjiang" rel="noopener" data-astro-cid-jo6i4kqk> GitHub </a> </li><li data-astro-cid-jo6i4kqk> <a href="https://www.linkedin.com/in/jim-jiang" rel="noopener" data-astro-cid-jo6i4kqk> LinkedIn </a> </li> </ul> <p class="site-footer__legal" data-astro-cid-jo6i4kqk>
+© 2026 <a href="https://github.com/tojimjiang" data-astro-cid-jo6i4kqk>Jim Jiang</a> </p> </div> </footer> </body> </html>
