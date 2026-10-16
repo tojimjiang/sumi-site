@@ -13,7 +13,6 @@ div div div.qr-pretty-wrapper {
     /* max-height: 56px; */
     padding: calc(var(--qr-code-scale) * var(--qr-cell-size));
     margin: calc(var(--qr-code-scale) * var(--qr-cell-size));
-    box-sizing: border-box;
 }
 
 .qr-pretty-side-text {
@@ -31,25 +30,15 @@ div div div.qr-wrapper {
     display: flex;
     flex-wrap: wrap;
     /* margin: auto; */
-    border: calc(var(--qr-cell-size) * var(--qr-code-scale) * 1.5) solid #fff;
+    border: calc(var(--qr-cell-size) * var(--qr-code-scale) * 1.5)solid #fff;
     border-radius: 0;
     box-sizing: border-box;
-    padding: 0;
-    margin: 0;
     grid-column: 1;
     grid-row: 1;
 }
 
 div div div.qr-grid-wrapper {
     display: grid;
-    place-items: center;
-    width: max-content;
-    height: max-content;
-}
-
-div.qr-wrapper > .qr-line-wrapper {
-    width: max-content;
-    flex: 0 0 auto;
 }
 
 div.qr-wrapper > .qr-line-wrapper {
@@ -90,62 +79,14 @@ a.qr-href {
 }
 
 @media print {
-    :root {
-        --qr-code-scale: 1;
-        --qr-cell-size: 2px;
-    }
-
     div div div.qr-wrapper {
-        /* Let the 29-module grid define its own width; symmetric border stays centered. */
-        width: max-content !important;
+        /* Preserve enough width for all 29 modules plus the white quiet zone. */
+        width: calc(var(--qr-code-scale) * 62px + 6px) !important;
         max-width: none;
-        background-color: #fff !important;
-        border-color: #fff !important;
-    }
-
-    div.qr-wrapper > .qr-line-wrapper {
-        width: max-content !important;
-        height: 2px !important;
-        flex: 0 0 max-content;
-    }
-
-    div.qr-wrapper > .qr-line-wrapper > .qr-cell {
-        width: 2px !important;
-        min-width: 2px !important;
-        max-width: 2px !important;
-        height: 2px !important;
-        min-height: 2px !important;
-        max-height: 2px !important;
-        flex: 0 0 2px;
-        padding: 0 !important;
-        border: 0 !important;
-        border-radius: 0 !important;
-    }
-
-    div.qr-wrapper > .qr-line-wrapper > .qr-cell.qr-cell-light,
-    div.qr-wrapper > .qr-line-wrapper:nth-of-type(n+11):nth-of-type(-n+19) > .qr-cell:nth-of-type(n+11):nth-of-type(-n+19) {
-        background-color: #fff !important;
-    }
-
-    div.qr-wrapper > .qr-line-wrapper > .qr-cell.qr-cell-dark {
-        background-color: #000 !important;
-    }
-
-    .qr-pretty-side-text {
-        color: #111 !important;
-        background-color: #fff !important;
-        border: 0 !important;
-        padding: 0 6px 0 0;
-    }
-
-    .qr-logo {
-        filter: grayscale(1) contrast(2);
     }
 
     div div div.qr-pretty-wrapper {
         overflow: visible;
         margin-right: 0;
-        background-color: #fff !important;
-        padding-inline: calc(var(--qr-cell-size) * 1.5);
     }
 }
