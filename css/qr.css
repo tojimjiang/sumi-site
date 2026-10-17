@@ -30,11 +30,11 @@ div div div.qr-grid-wrapper {
     height: calc(var(--qr-code-scale) * (var(--qr-cell-count-width) + var(--qr-cell-spacing)) * var(--qr-cell-size));
 }
 
-.qr-screen {
+div div div.qr-grid-wrapper.qr-screen {
     display: grid;
 }
 
-.qr-print {
+div div div.qr-grid-wrapper.qr-print {
     display: none;
 }
 
@@ -105,11 +105,11 @@ a.qr-href {
 }
 
 @media print {
-    .qr-screen {
+    div div div.qr-grid-wrapper.qr-screen {
         display: none !important;
     }
 
-    .qr-print {
+    div div div.qr-grid-wrapper.qr-print {
         display: grid !important;
         background: #fff;
     }
